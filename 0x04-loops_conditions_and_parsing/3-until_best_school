@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#displays Best School 10 times
+i=0
+until [ $i -ge 9 ]
+do
+	if [[ "$i" -eq "8" ]]
+	then
+		echo "Hi"	
+	fi
+	((i++))
+	echo "Best School"
+done	
