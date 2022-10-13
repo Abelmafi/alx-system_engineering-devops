@@ -8,14 +8,14 @@ do
                 echo "bad luck"
 		((i++))
 		continue
-	fi
-	if [[ "$i" -eq "7" ]]
+	elif [[ "$i" -eq "7" ]]
 	then
 		echo "good luck"
 		((i++))
 		continue
-        fi
-        ((i++))
-        echo "Best School"
+	else
+        	((i++))
+        	echo "Best School"
+	fi
 done
 
