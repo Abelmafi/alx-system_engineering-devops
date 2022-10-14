@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 #Bash script that stops 4-to_infinity_and_beyond process using kill command.
-kill -TERM `pgrep bash`
+kill -TERM $(pgrep bash)
+# shellcheck disable=SC2009
