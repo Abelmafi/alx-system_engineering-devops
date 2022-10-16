@@ -5,4 +5,4 @@
 
 #Format: IP HTTP_CODE , in a list format
 file="$(pwd)/apache-access.log"
-awk '{print $1, $9}' "$file" | sort | uniq -c | sort -nr | head
+awk '{print $1, $9}' "$file" | sort | uniq -c | sort -nr
