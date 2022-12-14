@@ -8,5 +8,5 @@ else
 	ip="$2"
 	user="$3"
 	private_key="$4"
-	scp -o StrictHostKeyChaking=no -i "$private_key" "$file" "$user@$ip":~/;
+	scp -o StrictHostKeyChecking=no -i "$private_key" "$file" "$user@$ip":~/;
 fi
