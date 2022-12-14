@@ -5,7 +5,7 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 #sed -i "22s/listen .*/listen 80" /etc/nginx/sites-enabled/default
 sudo mkdir -p /var/www/html
-sudo chown -R $USER:$USER /var/www/html
+sudo chown -R "$USER":"$USER" /var/www/html
 sudo chmod -R 755 /var/www
 sudo service ngnix start
 sudo ufw allow 'Nginx HTTP'
