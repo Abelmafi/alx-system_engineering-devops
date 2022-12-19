@@ -4,7 +4,7 @@ sudu apt-get install --no-install-recommends software-properties-common
 sudo add-apt-repository ppa:vbernat/haproxy-2.7
 sudo apt-get install haproxy=2.7.\*
 
-server configration=/
+server configration=\
 "
 defaults
 	mode http
@@ -19,8 +19,8 @@ frontend myfrontend
 
 backend myservers
 	balance roundrobin
-	server 64925-web-01 154.236.41.101: check
-	server 64925-web-02 34.224.6.181: check
+	server 64925-web-01 154.236.41.101:80 check
+	server 64925-web-02 34.224.6.181:80 check
 "
 #shellcheck disable=SC2154
 
