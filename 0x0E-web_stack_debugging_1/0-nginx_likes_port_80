@@ -1,3 +1,4 @@
 #!/usr/bin/env/bash
 # This bash script tries to configure "Failed to connect to 0 port 80: Connection refused" issue.
 sudo ufw allow 80
+sed -i "22s/listen .*/listen 80" /etc/nginx/sites-enabled/default
