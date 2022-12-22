@@ -15,9 +15,9 @@ if [ $# -eq 1 ]
 then
         for subs in "${sub_domains[@]}"
         do
-                dig_cmd $domain $subs
+                dig_cmd "$domain" "$subs"
         done
 elif [ $# -eq 2 ]
 then
-        dig_cmd $domain $sub
+        dig_cmd "$domain" "$sub"
 fi
