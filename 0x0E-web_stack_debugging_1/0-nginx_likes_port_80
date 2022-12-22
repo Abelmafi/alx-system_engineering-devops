@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This bash script tries to configure "Failed to connect to 0 port 80: fix.
+# This bash script configure listining port 80 error.
 
-sed -i "22s/listen .*/listen 80" /etc/nginx/sites-enable
+sed -i "22s/listen .*/listen 80" /etc/nginx/sites-enabled/default
 sudo service ngnix restart
