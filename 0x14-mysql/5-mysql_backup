@@ -1,0 +1,7 @@
+#!/use/bin/env bash
+# Create mysql dump file and compress dump file for buckup
+
+PASS="$1"
+DATE=$(date %d-%m-%y)
+mysqldump -u root -p "$PASS" --opt --all-databases > backup.sql
+tar -zcvf "$DATE".tar.gz backup.sql
