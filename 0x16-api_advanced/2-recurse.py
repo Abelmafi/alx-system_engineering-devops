@@ -3,13 +3,14 @@
 import requests
 
 
-def recurse(subreddit, after='', hot_list=[]):
+def recurse(subreddit, after='', count=0, hot_list=[]):
     """..."""
     if subreddit is None or type(subreddit) is not str:
         return None
     headers = {"User-Agent": "MyAPI/0.0.2"}
     params = {
             "after": after,
+            "count": count,
             'limit': 100
             }
     res = requests.get('https://www.reddit.com/r/' + subreddit +
@@ -23,7 +24,8 @@ def recurse(subreddit, after='', hot_list=[]):
         hot_list.append(data.get('data').get('title'))
 
     after = res.json()['data']['after']
+    count += res.json()['data']['dist']
     if params['after'] is not None:
-        return recurse(subreddit, after, hot_list)
+        return recurse(subreddit, after, count, hot_list)
 
     return hot_list
