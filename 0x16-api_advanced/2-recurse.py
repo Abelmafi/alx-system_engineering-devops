@@ -16,7 +16,7 @@ def recurse(subreddit, after='', hot_list=[]):
                        '/hot.json', params=params, headers=headers,
                        allow_redirects=False)
 
-    if res.status_code == 404:
+    if res.status_code != 200:
         return None
 
     for data in res.json()['data']['children']:
