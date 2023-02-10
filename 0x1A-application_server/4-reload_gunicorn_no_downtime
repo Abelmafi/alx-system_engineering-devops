@@ -2,4 +2,5 @@
 # Gracefully reloads Gunicorn.
 
 sudo systemctl status gunicorn |  sed -n 's/.*Main PID: \(.*\)$/\1/g p' | cut -f1 -d' ' | xargs kill -HUP
+sudo systemctl daemon-reload
 sudo systemctl start gunicorn
